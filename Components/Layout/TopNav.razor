@@ -1,0 +1,46 @@
+﻿@inject NavigationManager Navigation
+
+<nav class="bg-blue-600 text-white shadow-md p-4 flex justify-between items-center">
+    <!-- Logo / Brand Name -->
+    <div class="text-xl font-semibold">
+        <a href="/" class="hover:text-gray-200">BlazorApp</a>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="hidden md:flex space-x-6">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/about" class="hover:text-gray-200">About</a>
+        <a href="/contact" class="hover:text-gray-200">Contact</a>
+    </div>
+
+    <!-- Right Icons -->
+    <div class="flex space-x-4">
+        <button class="p-2 rounded bg-blue-500 hover:bg-blue-700">
+            <i class="fas fa-bell"></i> <!-- Notification Icon -->
+        </button>
+        <button class="p-2 rounded bg-blue-500 hover:bg-blue-700">
+            <i class="fas fa-user"></i> <!-- User Profile Icon -->
+        </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden p-2 rounded bg-blue-500 hover:bg-blue-700" @onclick="ToggleMenu">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="md:hidden bg-blue-700 text-white p-4 space-y-2" style="@(isMenuOpen ? "display:block;" : "display:none;")">
+    <a href="/" class="block hover:bg-blue-800 p-2">Home</a>
+    <a href="/about" class="block hover:bg-blue-800 p-2">About</a>
+    <a href="/contact" class="block hover:bg-blue-800 p-2">Contact</a>
+</div>
+
+@code {
+    private bool isMenuOpen = false;
+
+    private void ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+    }
+}
