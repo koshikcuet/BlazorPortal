@@ -58,3 +58,70 @@ h1:focus {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.top-row {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 2px solid #ddd;
+}
+
+    .top-row a {
+        margin-right: 20px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+        .top-row a:hover {
+            text-decoration: underline;
+        }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-weight: bold;
+    color: #007bff;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+    .dropbtn:hover {
+        text-decoration: underline;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
